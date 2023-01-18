@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FF69B4"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+        <ImageView
+            android:id="@+id/topCircle"
+            android:layout_width="270dp"
+            android:layout_height="300dp"
+            android:src="@drawable/topcircle"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <ImageView
+            android:id="@+id/register_image"
+            android:layout_width="290dp"
+            android:layout_height="290dp"
+            android:layout_gravity="center"
+            android:layout_marginRight="80dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/registerimg"
+            app:layout_constraintHorizontal_bias="0.516"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/register_image">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Register"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/inter_semibold"
+           />
+
+        <EditText
+            android:id="@+id/PhoneNumberEditText"
+            android:layout_width="273dp"
+            android:layout_height="35dp"
+            android:background="@drawable/edit_box_background"
+            android:layout_gravity="center"
+            android:hint="Phone Number"
+            android:textColorHint="#2C2C2C"
+            android:textSize="14dp"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/inter"
+            />
+
+        <EditText
+            android:id="@+id/PasswordEditText"
+            android:layout_width="273dp"
+            android:layout_height="35dp"
+            android:background="@drawable/edit_box_background"
+            android:layout_gravity="center"
+            android:hint="Password"
+            android:textColorHint="#2C2C2C"
+            android:textSize="14dp"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter"
+            />
+
+        <EditText
+            android:id="@+id/RePasswordEditText"
+            android:layout_width="273dp"
+            android:layout_height="35dp"
+            android:background="@drawable/edit_box_background"
+            android:layout_gravity="center"
+            android:hint="Re-enter Password"
+            android:textColorHint="#2C2C2C"
+            android:textSize="14dp"
+            android:paddingLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/inter"
+            />
+
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center"
+
+            android:background="@drawable/login_button"
+            android:text="Sign Up"
+            android:textAlignment="center"
+            android:paddingBottom="2dp"
+            android:textAppearance="null"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:textStyle="bold"
+
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/inter_semibold"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Already having an account?"
+            android:layout_gravity="center"
+            android:fontFamily="@font/inter_semibold"
+            android:textColor="@color/white"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+        <ImageView
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:src="@drawable/bottomcircle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
