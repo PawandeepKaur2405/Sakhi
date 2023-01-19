@@ -1,13 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/FrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android">
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RegisterFragment"
+    android:background="#FF9ECF">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/bottomcircle"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewPort="true">
 
 <androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FF69B4"
+    android:id="@+id/OuterConstraintLayout"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
 
@@ -123,13 +140,7 @@
 
     </LinearLayout>
 
-    <ImageView
-
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:src="@drawable/bottomcircle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
