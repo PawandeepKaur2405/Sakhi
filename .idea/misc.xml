@@ -7,7 +7,11 @@
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/edit_box_background.xml" value="0.208" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/login_button.xml" value="0.208" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/seperation_line.xml" value="0.208" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/fragment_login.xml" value="0.25" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/login_layout.xml" value="0.264" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/register_layout.xml" value="0.264" />
       </map>
