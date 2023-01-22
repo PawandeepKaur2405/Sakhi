@@ -44,6 +44,9 @@
         <action
             android:id="@+id/action_userDetails_to_guardianDetailsFragment"
             app:destination="@id/guardianDetailsFragment" />
+        <action
+            android:id="@+id/action_userDetails_self"
+            app:destination="@id/userDetails" />
     </fragment>
     <fragment
         android:id="@+id/guardianDetailsFragment"

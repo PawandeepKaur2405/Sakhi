@@ -48,6 +48,14 @@ class UserRepo {
         }
     }
 
+    fun deleteGuardian(userId: String, guardId: String) {
+        userId.let {
+            GlobalScope.launch(Dispatchers.IO) {
+                userCollection.document(userId).update("guardians", FieldValue.arrayRemove(guardId))
+            }
+        }
+    }
+
     fun updateSuperGuardian(userId: String, sGuardian: String) {
         userId.let {
             GlobalScope.launch(Dispatchers.IO) {

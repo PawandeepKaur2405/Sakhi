@@ -15,6 +15,8 @@ import com.example.sakhi.R
 import com.example.sakhi.Repository.UserRepo
 import com.example.sakhi.databinding.FragmentUserDetailsBinding
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.collections.ArrayList
 
@@ -43,22 +45,16 @@ class UserDetails : Fragment() {
 
         val userRepo: UserRepo = UserRepo()
         var _guards : User
-        userRepo.getUserById(auth.currentUser!!.uid).addOnSuccessListener { _guards = it.toObject(User::class.java)!!
-            val guards: List<String> = _guards.guardians
 
-            binding.recyclerview.adapter = GuardianAdapter(guards)
-            binding.recyclerview.layoutManager = LinearLayoutManager(view?.context)
+        GlobalScope.launch {
+            userRepo.getUserById(auth.currentUser!!.uid).addOnSuccessListener {
+                _guards = it.toObject(User::class.java)!!
+                val guards: List<String> = _guards.guardians
+
+                binding.recyclerview.adapter = GuardianAdapter(guards)
+                binding.recyclerview.layoutManager = LinearLayoutManager(view?.context)
+            }
         }
-
-//        binding.recyclerview.adapter = GuardianAdapter(auth.currentUser?.let {
-//            userRepo.getUserById(
-//                it.uid).addOnCompleteListener {
-//                    if(it.isSuccessful) {
-//                        val doc = it.result.toObject(User::class.java)!!
-//                            .guardians
-//                    }
-//            }
-//        })
 
         binding.addGuardianButton.setOnClickListener {
             findNavController().navigate(R.id.action_userDetails_to_guardianDetailsFragment)
