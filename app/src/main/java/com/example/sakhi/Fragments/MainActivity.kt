@@ -1,7 +1,8 @@
-package com.example.sakhi
+package com.example.sakhi.Fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.sakhi.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

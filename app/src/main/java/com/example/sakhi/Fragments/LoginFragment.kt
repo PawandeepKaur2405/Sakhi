@@ -1,4 +1,4 @@
-package com.example.sakhi
+package com.example.sakhi.Fragments
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,12 +9,16 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.sakhi.Models.User
+import com.example.sakhi.R
+import com.example.sakhi.Repository.UserRepo
 import com.example.sakhi.databinding.FragmentLoginBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 
 class LoginFragment : Fragment() {
@@ -24,6 +28,8 @@ class LoginFragment : Fragment() {
 
     private lateinit var auth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+    private lateinit var userRepo: UserRepo
+
     private val RC_SIGN_IN: Int = 123
     private val TAG: String = "Message"
 
@@ -41,6 +47,7 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         auth = FirebaseAuth.getInstance()
+        userRepo = UserRepo()
 
         val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
             .requestIdToken(getString(R.string.default_web_client_id))
@@ -63,7 +70,7 @@ class LoginFragment : Fragment() {
         }
     }
 
-    fun loginUsingGoogle() {
+    private fun loginUsingGoogle() {
         val signInIntent = googleSignInClient.signInIntent
         startActivityForResult(signInIntent, RC_SIGN_IN)
     }
@@ -92,7 +99,12 @@ class LoginFragment : Fragment() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithGoogle:success")
                     val user = auth.currentUser
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    val isNew: Boolean = task.getResult()?.additionalUserInfo?.isNewUser == true
+                    if(isNew) {
+                        val user = User(auth.currentUser!!.uid)
+                        userRepo.addUser(user)
+                    }
+                    updateUI(user)
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithGoogle:failure", task.exception)
@@ -101,7 +113,7 @@ class LoginFragment : Fragment() {
             }
     }
 
-    fun loginUsingCredentials() {
+    private fun loginUsingCredentials() {
         val email = binding.EmailEditText.text.toString()
         val pass = binding.PasswordEditText.text.toString()
 
@@ -109,7 +121,8 @@ class LoginFragment : Fragment() {
             auth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
                 if(it.isSuccessful) {
                     Toast.makeText(view?.context, "Sign in successful!", Toast.LENGTH_SHORT).show()
-                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    updateUI(auth.currentUser)
+//                    findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
                 }
                 else {
                     Toast.makeText(view?.context, "Sign in Failed!", Toast.LENGTH_SHORT).show()
@@ -124,8 +137,30 @@ class LoginFragment : Fragment() {
     override fun onStart() {
         super.onStart()
 
-        if(auth.currentUser!=null) {
-            Toast.makeText(view?.context, "Already a user!", Toast.LENGTH_SHORT).show()
+        val currUser = auth.currentUser
+        if(currUser!=null) {
+            updateUI(currUser)
         }
+    }
+
+    private fun updateUI(user: FirebaseUser?) {
+
+            if(user != null) {
+                userRepo.getUserById(user!!.uid).addOnCompleteListener {
+                    val temp = it.result.getString("name")
+
+                    if(temp!="" && temp!=null) {
+                        findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                    }
+                    else {
+                        findNavController().navigate(R.id.action_loginFragment_to_userDetails)
+                    }
+                }
+            }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 }

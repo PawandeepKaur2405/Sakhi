@@ -6,6 +6,7 @@
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/actionrectangle.xml" value="0.2365" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/border_round_btn.xml" value="0.2405" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/button.xml" value="0.208" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/buttonbgimproved.xml" value="0.1895" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/edit_box_background.xml" value="0.208" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/google_icon.xml" value="0.2405" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/drawable/login_button.xml" value="0.208" />
@@ -14,9 +15,12 @@
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/activity_main.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/activity_maps.xml" value="0.25" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/activity_register.xml" value="0.25" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/fragment_guardian_details.xml" value="0.2" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/fragment_login.xml" value="0.264" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/fragment_register.xml" value="0.264" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/fragment_user_details.xml" value="0.264" />
+        <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/guardian_item.xml" value="0.264" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/login_layout.xml" value="0.264" />
         <entry key="..\:/Users/gurmi/AndroidStudioProjects/Sakhi/app/src/main/res/layout/register_layout.xml" value="0.264" />
       </map>
