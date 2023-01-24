@@ -25,6 +25,8 @@ class UserDetails : Fragment() {
     private var _binding: FragmentUserDetailsBinding?=null
     private val binding get() = _binding!!
     private lateinit var auth: FirebaseAuth
+    private lateinit var guardianAdapter: GuardianAdapter
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -63,9 +65,9 @@ class UserDetails : Fragment() {
         binding.ContinueButton.setOnClickListener {
             val name = binding.UserNameEditText.text.toString()
             val phone = binding.UserPhoneEditText.text.toString()
-            val guardians = binding.recyclerview.size.toString()
+            val guardians = binding.recyclerview.adapter
 
-            if(name.isNotEmpty() && phone.isNotEmpty() && guardians.isNotEmpty()) {
+            if(name.isNotEmpty() && phone.isNotEmpty() && guardians!!.itemCount !=0 ) {
                 updateUI(name, phone)
             }
             else {

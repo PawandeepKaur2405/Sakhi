@@ -3,39 +3,36 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FF9ECF">
+    android:layout_height="match_parent">
 
     <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:src="@drawable/topsmallcircle"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/topsmallcircle2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="640dp"
+        android:layout_marginLeft="80dp"
+        />
 
     <ImageView
-        android:layout_width="170dp"
-        android:layout_height="170dp"
-        android:src="@drawable/smallbottomcircle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="140dp"
-        android:src="@drawable/smallsidecircle"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:src="@drawable/topsmallcircle2"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        />
 
     <ImageView
-        android:layout_width="190dp"
+        android:layout_width="match_parent"
         android:layout_height="190dp"
-        android:src="@drawable/homeimg"
+        android:src="@drawable/homeimgbg"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"/>
 
     <ImageView
+        android:id="@+id/settingButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/settinglogo"
@@ -58,14 +55,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="30dp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="45dp"
             android:fontFamily="@font/inter_semibold"
-            android:shadowColor="#CD5590"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="5"
             android:text="Hi,"
-            android:textColor="#414448"
+            android:textColor="#CD5590"
+            android:textSize="40dp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:fontFamily="@font/inter_semibold"
+            android:text="I am Sakhi"
+            android:textColor="#CD5590"
             android:textSize="40dp"
             android:textStyle="bold"/>
 
@@ -74,22 +77,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
             android:fontFamily="@font/inter_semibold"
-            android:shadowColor="#CD5590"
-            android:shadowDx="2"
-            android:shadowDy="2"
-            android:shadowRadius="5"
-            android:text="I am Sakhi"
-            android:textColor="#414448"
-            android:textSize="40sp"
-            android:textStyle="bold"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="30dp"
-            android:fontFamily="@font/inter_semibold"
             android:text="How can I help you?"
-            android:textColor="@color/white"
+            android:textColor="#771F54"
             android:textSize="18sp"
             android:textStyle="bold"/>
     </LinearLayout>
@@ -98,34 +87,30 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginRight="50dp"
-        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout1">
 
         <ImageView
             android:id="@+id/areaSafeButton"
-            android:layout_width="136dp"
+            android:layout_width="match_parent"
             android:layout_height="116dp"
             android:layout_gravity="center"
-            android:src="@drawable/actionrectangle"
-
+            android:src="@drawable/actionbg"
             />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
         <ImageView
-            android:id="@+id/findPoliceButton"
-            android:layout_width="136dp"
+            android:id="@+id/emergencyCallButton"
+            android:layout_width="match_parent"
             android:layout_height="116dp"
             android:layout_gravity="center"
-            android:src="@drawable/actionrectangle" />
+            android:src="@drawable/actionbg"
+            android:layout_marginTop="20dp"
+            />
 
     </LinearLayout>
 
@@ -133,74 +118,42 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginLeft="50dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginRight="50dp"
-        android:orientation="horizontal"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginRight="30dp"
+        android:orientation="vertical"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/linearLayout1">
 
         <TextView
-            android:layout_width="136dp"
+            android:layout_width="wrap_content"
             android:layout_height="116dp"
             android:layout_gravity="center"
             android:fontFamily="@font/inter_bold"
-            android:paddingTop="25dp"
-            android:text="Check if \nthe \narea is safe?"
+            android:paddingTop="32dp"
+            android:text="Check if the \narea is safe?"
             android:textAlignment="center"
             android:textColor="#414448"
-            android:textSize="16dp"
-            android:textStyle="italic|bold" />
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
+            android:textSize="18dp"
+            android:textStyle="italic"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"/>
 
         <TextView
             android:layout_width="136dp"
             android:layout_height="116dp"
             android:layout_gravity="center"
-            android:fontFamily="@font/inter_bold"
-            android:text="Near-by \nPolice \nStations"
-            android:textColor="#414448"
-            android:textSize="16dp"
-            android:textStyle="bold|italic"
-            android:paddingTop="25dp"
+            android:fontFamily="@font/inter_extrabold"
+            android:text="EMERGENCY\nCALL"
             android:textAlignment="center"
+            android:textColor="#890B0B"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="20dp"
+            android:paddingTop="32dp"
             />
     </LinearLayout>
 
-    <ImageView
-        android:id="@+id/emergencyCallButton"
-        android:layout_width="136dp"
-        android:layout_height="116dp"
-        android:layout_gravity="center"
-        android:src="@drawable/actionrectangle"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="160dp"/>
-
-    <TextView
-        android:layout_width="136dp"
-        android:layout_height="116dp"
-        android:layout_gravity="center"
-        android:fontFamily="@font/inter_extrabold"
-        android:text="EMERGENCY\nCALL"
-        android:textAlignment="center"
-        android:textColor="#890B0B"
-        android:textSize="16dp"
-        android:textStyle="bold"
-
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginTop="160dp"
-        android:paddingTop="35dp"
-        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
